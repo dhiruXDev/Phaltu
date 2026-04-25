@@ -1,1 +1,22 @@
-https://chatgpt.com/gg/v/69ec43ed7f6c81a2a3ab92f3c1a0c03a?token=apzeWdEJ0e8r0IXJoD8vWA
+
+/* ---------------- STATS ---------------- */
+function Stats() {
+  const items = [
+    { v: "120K+", l: "Resumes analyzed" },
+    { v: "94%", l: "ATS pass rate" },
+    { v: "3.2×", l: "More interviews" },
+    { v: "4.9★", l: "Average rating" },
+  ];
+  return (
+    <section className="border-y border-border/50 bg-secondary/20 py-12">
+      <div className="container mx-auto grid grid-cols-2 gap-8 px-4 md:grid-cols-4">
+        {items.map((s) => (
+          <div key={s.l} className="text-center">
+            <div className="text-3xl font-bold text-gradient sm:text-4xl">{s.v}</div>
+            <div className="mt-1 text-sm text-muted-foreground">{s.l}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
