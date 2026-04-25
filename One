@@ -20,3 +20,69 @@ function Stats() {
     </section>
   );
 }
+/* ---------------- DEMO PREVIEW ---------------- */
+function DemoPreview() {
+  return (
+    <section className="container mx-auto px-4 py-24">
+      <div className="mx-auto max-w-5xl">
+        <div className="relative rounded-2xl glass p-2 shadow-elegant animate-float">
+          <div className="rounded-xl bg-background/80 p-6">
+            <div className="grid gap-4 md:grid-cols-2">
+              {/* Resume preview side */}
+              <div className="rounded-lg bg-secondary/40 p-5">
+                <div className="mb-3 flex items-center justify-between">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Resume</div>
+                  <Badge variant="outline" className="border-primary/40 text-primary text-xs">
+                    Senior_Eng_v3.pdf
+                  </Badge>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-3 w-32 rounded bg-foreground/80" />
+                  <div className="h-2 w-48 rounded bg-muted-foreground/40" />
+                  <div className="mt-4 space-y-1.5">
+                    {[80, 95, 70, 88, 60].map((w, i) => (
+                      <div key={i} className="h-2 rounded bg-muted-foreground/30" style={{ width: `${w}%` }} />
+                    ))}
+                  </div>
+                  <div className="mt-4 h-3 w-24 rounded bg-foreground/70" />
+                  <div className="mt-2 space-y-1.5">
+                    {[92, 78, 84].map((w, i) => (
+                      <div key={i} className="h-2 rounded bg-muted-foreground/30" style={{ width: `${w}%` }} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              {/* AI feedback side */}
+              <div className="rounded-lg bg-gradient-to-br from-primary/15 to-transparent p-5">
+                <div className="mb-3 flex items-center justify-between">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-primary">AI Feedback</div>
+                  <div className="text-3xl font-bold text-gradient">87</div>
+                </div>
+                <div className="space-y-3">
+                  {[
+                    { ok: true, t: "Strong action verbs throughout" },
+                    { ok: true, t: "Quantified impact in 5/6 bullets" },
+                    { ok: false, t: "Add 'TypeScript' to skills section" },
+                    { ok: false, t: "Bullet 3 missing measurable result" },
+                  ].map((s, i) => (
+                    <div key={i} className="flex items-start gap-2 rounded-md bg-background/40 p-2.5 text-xs">
+                      <CheckCircle2 className={`mt-0.5 h-3.5 w-3.5 ${s.ok ? "text-primary" : "text-amber-400"}`} />
+                      <span>{s.t}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  {["TypeScript", "GraphQL", "AWS"].map((k) => (
+                    <span key={k} className="rounded-full border border-primary/40 bg-primary/10 px-2 py-0.5 text-xs text-primary">
+                      + {k}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
